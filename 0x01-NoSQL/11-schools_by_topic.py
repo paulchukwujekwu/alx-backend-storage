@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 """
-change school topic
+find by topic
 """
 import pymongo
 
 
-def update_topics(mongo_collection, name, topics):
+def schools_by_topic(mongo_collection, topic):
     """
-    update many rows
+    Find by topic
     """
-    return mongo_collection.update_many(
-        {"name": name},
-        {"$set": {"topics": topics}}
-    )
+    return mongo_collection.find({"topics": topic})
